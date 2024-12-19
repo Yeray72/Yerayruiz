@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jerez</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'FS Joy', sans-serif;
+            background-image: url('MULTIMEDIA.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
+
+        .back-button:hover {
+            background-color: darkorange;
+        }
+
+        .back-button::before {
+            content: '← ';
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 60%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='multimedia.html';">Volver</button>
+    <h1></h1>
+    <div class="video-container">
+        <video controls autoplay loop>
+            <source src="jerez.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
+</body>
+</html>

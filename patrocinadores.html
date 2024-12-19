@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Patrocinadores</title>
+    <style>
+        @font-face {
+            font-family: 'FS Joy';
+            src: url('FSJoy-Regular.woff2') format('woff2'), url('FSJoy-Regular.woff') format('woff');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'FS Joy', sans-serif;
+            background-image: url('MULTIMEDIA.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+        }
+
+        .sponsors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 50px;
+            width: 90%;
+            max-width: 1400px;
+            margin-left: 60px;
+         }
+
+        .sponsor {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor img {
+            width: 120%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .sponsor:hover {
+            transform: scale(1.1);
+        }
+
+        .sponsor span {
+            margin-top: 8px;
+            display: block;
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Botón de volver al índice */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
+
+        .back-button:hover {
+            background-color: darkorange;
+        }
+
+        .back-button::before {
+            content: '← ';
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='indice.html';">VOLVER</button>
+<h1><h1>
+    <div class="sponsors-container">
+        <div class="sponsor">
+            <a href="nena.html"><img src="nena.png" alt="Nena Paine"></a>
+            <span>Asociación Nena Paine</span>
+        </div>
+        <div class="sponsor">
+            <a href="ayto.html"><img src="ayto.png" alt="Ayto Rincon"></a>
+            <span>Ayto Rincon de la Victoria</span>
+        </div>
+        <div class="sponsor">
+            <a href="ernesto.html"><img src="ernesto.png" alt="Ernesto"></a>
+            <span>Ernesto Personal Trainer</span>
+        </div>
+        <div class="sponsor">
+            <a href="moto.html"><img src="moto.png" alt="Motoschool"></a>
+            <span>Motoschool Málaga</span>
+        </div>
+        <div class="sponsor">
+            <a href="airoh.html"><img src="airoh.png" alt="Airoh"></a>
+            <span>Airoh</span>
+        </div>
+        <div class="sponsor">
+            <a href="virus.html"><img src="virus.png" alt="Virus Power"></a>
+            <span>Virus Power</span>
+        </div>
+        <div class="sponsor">
+            <a href="rainers.html"><img src="rainers.png" alt="Rainers"></a>
+            <span>Rainers</span>
+        </div>
+        <div class="sponsor">
+            <a href="flc.html"><img src="flc.png" alt="FLC"></a>
+            <span>Fábrica de Losetas de Caucho</span>
+        </div>
+        <div class="sponsor">
+            <a href="diputacion.html"><img src="diputacion.png" alt="Diputación"></a>
+            <span>Diputación de Málaga</span>
+        </div>
+        <div class="sponsor">
+            <a href="fk.html"><img src="fk.png" alt="FK"></a>
+            <span>Fitness Kingdom</span>
+        </div>
+        <div class="sponsor">
+            <a href="balakook.html"><img src="balakook.png" alt="Balakook"></a>
+            <span>balakook</span>
+        </div>
+        <div class="sponsor">
+            <a href="fisio.html"><img src="fisio.png" alt="Fisioterapia"></a>
+            <span>Fisioterapia Manuel Cuenca</span>
+        </div>
+        <div class="sponsor">
+            <a href="belevels.html"><img src="belevels.png" alt="Belevels"></a>
+            <span>Be Levels</span>
+        </div>
+        <div class="sponsor">
+            <a href="beone.html"><img src="beone.png" alt="Be One"></a>
+            <span>Be One</span>
+        </div>
+     </div>
+</body>
+</html>

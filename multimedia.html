@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Índice</title>
+    <style>
+        @font-face {
+            font-family: 'FS Joy';
+            src: url('path-to-font/FSJoy-Regular.woff2') format('woff2'), url('path-to-font/FSJoy-Regular.woff') format('woff');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'FS Joy', sans-serif;
+            background-image: url('MULTIMEDIA.jpg'); /* Fondo constante */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa toda la pantalla */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Tres columnas */
+            gap: 5px; /* Separación entre las imágenes */
+            text-align: center;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        .item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .item img {
+            max-width:250px; /* Tamaño máximo de las imágenes */
+            transition: transform 0.3s ease; /* Animación al pasar el cursor */
+            border-radius: 10px;
+        }
+
+        .item img:hover {
+            transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+        }
+
+        .item.inactive img {
+            filter: grayscale(100%); /* Blanco y negro para inactivos */
+            cursor: not-allowed; /* Sin acción */
+        }
+
+        .item span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.5rem; /* Tamaño de las letras */
+            font-weight: bold; /* Letras en negrita */
+            color: white; /* Color del texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mayor legibilidad */
+        }
+
+        .item.inactive span {
+            color: rgba(255, 255, 255, 0.5); /* Texto gris para inactivos */
+        }
+
+        /* Ventanas emergentes */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+            z-index: 10;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup-close {
+            margin-top: 30px;
+            padding: 10px 10px;
+            border: none;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .popup-close:hover {
+            background-color: orange;
+        }
+
+.back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
+
+        .back-button:hover {
+            background-color: darkorange;
+        }
+
+        .back-button::before {
+            content: '← ';
+        }
+    </style>
+</head>
+<body>
+     <button class="back-button" onclick="window.location.href='indice.html';">Volver</button>
+    <div class="grid">
+         <div class="item">
+            <a href="aquiempezotodo.html"><img src="a3.jpg" alt="a"></a>
+            <span>Aquí empezó todo</span>
+        </div>
+        <div class="item">
+            <a href="primerascompeticiones.html"><img src="b3.jpg" alt="b"></a>
+            <span>Primeras Competiciones Minimotos</span>
+        </div>
+        <div class="item">
+            <a href="<div class="item">
+            <a href="campeonespaña.html"><img src="d2.jpg" alt="d"></a>
+            <span>Campeón de España 2016 "Moto5"</span>
+        </div>
+        <div class="item">
+            <a href="campeonatoespaña.html"><img src="e1 (8).jpg" alt="e1 (5)"></a>
+            <span>Campeón de España 2022 Supersport 600</span>
+        </div>
+        <div class="item">
+            <a href="moto2.html"><img src="f1 (2).jpg" alt="f"></a>
+            <span>Moto2 FIM JuniorGP</span>
+          </div>
+         <div class="item">
+            <a href="mundial.html"><img src="g1 (7).jpg" alt="g"></a>
+            <span>Debut Mundial Moto2 2023</span>
+        </div>
+        <div class="item">
+            <a href="mundialssp.html"><img src="h1 (6).jpg" alt="h"></a>
+            <span>Debut Mundial SSP 2023</span>
+        </div>
+        <div class="item">
+            <a href="temporada2024.html"><img src="j1 (7).jpg" alt="i"></a>
+            <span>Temporada 2024 WorldSSP</span>
+        </div>
+        <div class="item">
+            <a href="jerez.html"><img src="f1 (12).jpg" alt="f"></a>
+            <span>Video Podium Jerez Moto2</span>
+        </div>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Campeón de España 2016</title>
+    <style>
+      body {
+            margin: 0;
+            padding: 0;
+            font-family: 'FS Joy', sans-serif;
+            background-image: url('MULTIMEDIA.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+
+       .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
+
+        .back-button:hover {
+            background-color: darkorange;
+        }
+
+        .back-button::before {
+            content: '← ';
+        }
+
+        .image-grid {
+           display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+            gap: 2px; /* Separación entre las imágenes */
+            text-align: center;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+
+        .image-grid img {
+            width: 70%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilo del visor */
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-viewer img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .close-button:hover {
+            background-color: #orange;
+        }
+    </style>
+</head>
+<body>
+     <button class="back-button" onclick="window.location.href='multimedia.html';">Volver</button>
+    <h1></h1>
+    <div class="image-grid">
+        <img src="d1.jpg" alt="Imagen 1" onclick="openViewer('d1.jpg')">
+        <img src="d2.jpg" alt="Imagen 2" onclick="openViewer('d2.jpg')">
+        <img src="d3.jpg" alt="Imagen 3" onclick="openViewer('d3.jpg')">
+        <img src="d4.jpg" alt="Imagen 4" onclick="openViewer('d4.jpg')">
+        <img src="d5.jpg" alt="Imagen 5" onclick="openViewer('d5.jpg')">
+        <img src="d6.jpg" alt="Imagen 6" onclick="openViewer('d6.jpg')">
+        <img src="d7.jpg" alt="Imagen 7" onclick="openViewer('d7.jpg')">
+        <img src="d8.jpg" alt="Imagen 8" onclick="openViewer('d8.jpg')">
+        <img src="d9.jpg" alt="Imagen 9" onclick="openViewer('d9.jpg')">
+        <img src="d10.jpg" alt="Imagen 10" onclick="openViewer('d10.jpg')">
+        <img src="d11.jpg" alt="Imagen 11" onclick="openViewer('d11.jpg')">
+    </div>
+
+    <!-- Visor de imágenes -->
+    <div id="imageViewer" class="image-viewer">
+        <button class="close-button" onclick="closeViewer()">X</button>
+        <img id="viewerImage" src="" alt="Visor">
+    </div>
+
+    <script>
+        function openViewer(imageSrc) {
+            const viewer = document.getElementById('imageViewer');
+            const viewerImage = document.getElementById('viewerImage');
+            viewerImage.src = imageSrc;
+            viewer.style.display = 'flex';
+        }
+
+        function closeViewer() {
+            const viewer = document.getElementById('imageViewer');
+            viewer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

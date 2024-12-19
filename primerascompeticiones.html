@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Primeras Competiciones Minimotos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'FS Joy', sans-serif;
+            background-image: url('MULTIMEDIA.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+
+         .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
+
+        .back-button:hover {
+            background-color: darkorange;
+        }
+
+        .back-button::before {
+            content: '← ';
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+            gap: 10px; /* Separación entre las imágenes */
+            text-align: center;
+            margin-left: 0px;
+            margin-right: 400px;
+        }
+
+        .image-grid img {
+            max-width:250px; /* Tamaño máximo de las imágenes */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilo del visor */
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-viewer img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .close-button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+     <button class="back-button" onclick="window.location.href='multimedia.html';">Volver</button>
+    <h1></h1>
+    <div class="image-grid">
+        <img src="b1.jpg" alt="Imagen 1" onclick="openViewer('b1.jpg')">
+        <img src="b2.jpg" alt="Imagen 2" onclick="openViewer('b2.jpg')">
+        <img src="b3.jpg" alt="Imagen 3" onclick="openViewer('b11.jpg')">
+        <img src="b4.jpg" alt="Imagen 4" onclick="openViewer('b4.jpg')">
+        <img src="b5.jpg" alt="Imagen 5" onclick="openViewer('b5.jpg')">
+        <img src="b6.jpg" alt="Imagen 6" onclick="openViewer('b6.jpg')">
+        <img src="b7.jpg" alt="Imagen 7" onclick="openViewer('b7.jpg')">
+        <img src="b8.jpg" alt="Imagen 8" onclick="openViewer('b8.jpg')">
+        <img src="b9.jpg" alt="Imagen 9" onclick="openViewer('b9.jpg')">
+        <img src="b10.jpg" alt="Imagen 10" onclick="openViewer('b10.jpg')">
+        <img src="b11.jpg" alt="Imagen 11" onclick="openViewer('b3.jpg')">
+    </div>
+
+    <!-- Visor de imágenes -->
+    <div id="imageViewer" class="image-viewer" onclick="closeViewer()">
+        <button class="close-button" onclick="closeViewer()">X</button>
+        <img id="viewerImage" src="" alt="Visor">
+    </div>
+
+    <script>
+        function openViewer(imageSrc) {
+            const viewer = document.getElementById('imageViewer');
+            const viewerImage = document.getElementById('viewerImage');
+            viewerImage.src = imageSrc;
+            viewer.style.display = 'flex';
+        }
+
+        function closeViewer() {
+            const viewer = document.getElementById('imageViewer');
+            viewer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
