@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Retransmisión en Directo</title>
     <style>
         @font-face {
             font-family: 'FS Joy';
@@ -20,7 +19,6 @@
             background-position: center;
             background-attachment: fixed;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -28,54 +26,56 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 3rem;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
         }
 
-        .video-container {
+        .contacto-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .contacto-image {
             width: 80%;
             max-width: 2000px;
-            aspect-ratio: 16/9;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0.8);
             border: 0px solid white;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            autoplay;
+            border-radius: 0px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
         }
 
-        video {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .contacto-image:hover {
+            transform: scale(1.05);
         }
 
-        /* Botón de volver al índice */
-     .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 1.5rem;
-            padding: 10px;
-            background-color: orange;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-.back-button:hover {
-            background-color: darkorange;
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
-        .back-button::before {
-            content: '← ';
-
-
-  .back-button {
+ .back-button {
             position: fixed;
             top: 20px;
             left: 20px;
@@ -101,11 +101,9 @@
 </head>
 <body>
     <button class="back-button" onclick="window.location.href='indice.html';">Volver</button>
-    <div class="video-container">
-            <video autoplay loops controls>
-            <source src="contacto.mp4" type="video/mp4">
-            Tu navegador no soporta la reproducción de vídeos.
-        </video>
+    <div class="contacto-container">
+        <img src="contactodoc.png" alt="contacto" class="contacto-image">
     </div>
 </body>
 </html>
+        
