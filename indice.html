@@ -38,7 +38,7 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
-            gap: 0px; /* Separación entre las imágenes */
+            gap: 20px; /* Separación entre las imágenes */
             text-align: center;
             margin-bottom: 35px;         
         }
@@ -49,7 +49,7 @@
         }
 
         .item img {
-            max-width: 170px; /* Tamaño máximo de las imágenes */
+            max-width: 200px; /* Tamaño máximo de las imágenes */
             transition: transform 0.3s ease; /* Animación al pasar el cursor */
         }
 
@@ -65,7 +65,7 @@
         .item span {
             display: block;
             margin-top: 20px;
-            font-size: 2rem; /* Tamaño de las letras */
+            font-size: 1.4rem; /* Tamaño de las letras */
             font-weight: bold; /* Letras en negrita */
             color: white; /* Color del texto */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mayor legibilidad */
@@ -74,44 +74,14 @@
         .item.inactive span {
             color: rgba(255, 255, 255, 0.5); /* Texto gris para inactivos */
         }
-
-        /* Ventanas emergentes */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
-            z-index: 10;
-        }
-
-        .popup.active {
-            display: block;
-        }
-
-        .popup-close {
-            margin-top: 10px;
-            padding: 10px 10px;
-            border: none;
-            background-color: orange;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .popup-close:hover {
-            background-color: darkorange;
-        }
     </style>
 </head>
 <body>
     <div class="grid">
+        <div class="item">
+            <a href="proyecto.html"><img src="1.png" alt="Proyecto 2025"></a>
+            <span>Proyecto 2025</span>
+        </div>
         <div class="item">
             <a href="palmares.html"><img src="2.png" alt="Palmarés"></a>
             <span>Palmarés</span>
@@ -123,7 +93,7 @@ alt="Calendario 2025"></a>
         </div>
          <div class="item">
              <a href="retransmision.html"><img src="5.png" alt="Retransmisión"></a>
-            <span>Retransmisión en Directo</span>
+            <span>Donde ver en Directo</span>
         </div>
         <div class="item">
             <a href="patrocinadores.html"><img src="6.png" alt="Patrocinadores"></a>
